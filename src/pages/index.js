@@ -8,7 +8,7 @@ const Home = () => {
         <title>OurPC.com</title>
         <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
       </Head>
-      <h1 className="text-5xl">Welcome to lala</h1>
+      <h1 className="text-5xl">Welcome to Home for testing</h1>
     </div>
   );
 };
