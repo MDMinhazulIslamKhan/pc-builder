@@ -1,0 +1,97 @@
+[
+  {
+    "image": "https://www.cloud.ryanscomputers.com/cdn/products/medium/lenovo-d20-20-195-inch-hdmi-vga-wxga-wled-ips-11650962137.webp",
+    "productName": "Lenovo D20-20",
+    "category": "Monitor",
+    "status": "In stock",
+    "price": 8500,
+    "description": "Lenovo D20-20 19.5 Inch HDMI VGA WXGA+ WLED IPS Monitor #66C4KAC1MY.",
+    "keyFeatures": {
+      "Brand": "Lenovo",
+      "Model": "D20-20",
+      "Specification": "1440x900 (WxH) WXGA+",
+      "Resolution": "Full HD",
+      "Port": "USB 3.0, HDMI, VGA",
+      "Voltage": "220V"
+    },
+    "individualRating": 4.5,
+    "averageRating": 4.3,
+    "reviews": ["Goor product", "Comfortable and modern"]
+  },
+  {
+    "image": "https://www.cloud.ryanscomputers.com/cdn/products/medium/hp-p19v-g4-185-inch-hd-1366x768-monitor-vga-11611125261.webp",
+    "productName": "HP P19V G4",
+    "category": "Monitor",
+    "status": "In stock",
+    "price": 8900,
+    "description": "HP P19V G4 18.5 Inch HD VGA Monitor.",
+    "keyFeatures": {
+      "Brand": "HP",
+      "Model": "P19V G4",
+      "Specification": "1366x768",
+      "Resolution": "Full HD",
+      "Port": "USB 3.0, HDMI, VGA",
+      "Voltage": "220V"
+    },
+    "individualRating": 4.5,
+    "averageRating": 4.3,
+    "reviews": ["Goor product", "Comfortable and modern"]
+  },
+  {
+    "image": "https://www.cloud.ryanscomputers.com/cdn/products/medium/lenovo-l22e-30-215-inch-fhd-hdmi-vga-monitor-11653556679.webp",
+    "productName": "Lenovo L22e-30 21.5 inch",
+    "category": "Monitor",
+    "status": "In stock",
+    "price": 8000,
+    "description": "Lenovo L22e-30 21.5 Inch FHD HDMI VGA Monitor #66CBKAC1MY",
+    "keyFeatures": {
+      "Brand": "Lenovo",
+      "Model": "L22e-30",
+      "Specification": "1920x1080 (WxH) WXGA+",
+      "Resolution": "Full HD",
+      "Port": "USB 3.0, HDMI, VGA",
+      "Voltage": "220V"
+    },
+    "individualRating": 4.5,
+    "averageRating": 4.3,
+    "reviews": ["Goor product", "Comfortable and modern"]
+  },
+  {
+    "image": "https://www.cloud.ryanscomputers.com/cdn/products/medium/benq-gw2280-22-inch-eye-care-full-hd-ips-dual-11636281499.webp",
+    "productName": "BenQ GW2280",
+    "category": "Monitor",
+    "status": "In stock",
+    "price": 12500,
+    "description": "BenQ GW2280 22 inch Eye Care Full HD VA Dual HDMI VGA Monitor",
+    "keyFeatures": {
+      "Brand": "BenQ",
+      "Model": "BenQ GW2280",
+      "Specification": "1920x1080 (WxH) WXGA+",
+      "Resolution": "Full HD",
+      "Port": "USB 3.0, HDMI, VGA",
+      "Voltage": "220V"
+    },
+    "individualRating": 4.5,
+    "averageRating": 4.3,
+    "reviews": ["Goor product", "Comfortable and modern"]
+  },
+  {
+    "image": "https://www.cloud.ryanscomputers.com/cdn/products/medium/asus-vp247hae-236-inch-fhd-hdmi-vga-eye-care-11663820310.webp",
+    "productName": "Asus VP247HAE",
+    "category": "Monitor",
+    "status": "In stock",
+    "price": 9500,
+    "description": "Asus VP247HAE 23.6 inch FHD HDMI, VGA Eye Care Monitor",
+    "keyFeatures": {
+      "Brand": "Lenovo",
+      "Model": "D20-20",
+      "Specification": "1440x900 (WxH) WXGA+",
+      "Resolution": "Full HD",
+      "Port": "USB 3.0, HDMI, VGA",
+      "Voltage": "220V"
+    },
+    "individualRating": 4.5,
+    "averageRating": 4.3,
+    "reviews": ["Goor product", "Comfortable and modern"]
+  }
+]

@@ -1,11 +1,94 @@
+import RootLayout from "@/Components/Layouts/RootLayout";
+import Meta from "@/Components/meta/meta";
+import { addToCart } from "@/redux/features/cartSlice";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-const Monitor = () => {
+const Monitor = ({ allProducts }) => {
+  const dispatch = useDispatch();
+  // const { monitor } = useSelector((state) => state.cart);
+  const addProduct = (product) => {
+    dispatch(addToCart({ product: "monitor", details: product }));
+  };
   return (
-    <div>
-      <h1>This is from single Monitor</h1>
-    </div>
+    <>
+      <Meta title={"Monitor OurPC.com"} />
+      <h1 className="text-center font-bold text-4xl my-8">All Monitor</h1>
+      <div className="grid grid-cols-1 items-center lg:grid-cols-3 sm:grid-cols-2 gap-12">
+        {allProducts?.map((monitor) => (
+          <div
+            key={monitor._id}
+            className="card h-[600px] sm:w-80 md:w-96 bg-base-100 shadow-xl"
+          >
+            <div className="card-body items-center text-center pb-0">
+              <h2 className="card-title font-bold">{monitor.productName}</h2>
+              <p className="font-bold">
+                <span className="text-primary">Price</span> ${monitor.price}
+              </p>
+              <p className="font-bold -mt-4">
+                <span className="text-primary">Category</span> :{" "}
+                {monitor.category}
+              </p>
+            </div>
+            <figure className="px-4 h-80">
+              <Image
+                width={320}
+                height={320}
+                src={monitor.image}
+                alt={monitor.productName}
+                className="rounded-xl max-h-72"
+              />
+            </figure>
+            <div className="card-body pt-0 items-center text-center">
+              <p className="pb-4 ">{monitor.description}</p>
+              <div className="card-actions flex justify-between w-full">
+                <button
+                  className="btn btn-primary btn-sm"
+                  onClick={() => addProduct(monitor)}
+                >
+                  Add to Cart
+                </button>
+                <Link
+                  href={`/item/monitor/${monitor._id}`}
+                  className="font-semibold hover:text-primary"
+                >
+                  See more
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
 export default Monitor;
+Monitor.getLayout = function getLayout(page) {
+  return <RootLayout>{page}</RootLayout>;
+};
+
+export const getStaticProps = async () => {
+  try {
+    const res = await fetch(
+      "https://pc-builder-backend-mdminhazulislamkhan.vercel.app/monitor"
+    );
+    const data = await res.json();
+
+    return {
+      props: {
+        allProducts: data,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return {
+      props: {
+        allMonitor: [],
+      },
+      revalidate: 30,
+    };
+  }
+};

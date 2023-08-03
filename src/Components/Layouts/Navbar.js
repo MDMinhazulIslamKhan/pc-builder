@@ -4,10 +4,9 @@ import Link from "next/link";
 
 const Navbar = () => {
   const { data: session } = useSession();
-  console.log(session);
   return (
-    <div className="navbar bg-accent">
-      <div className="flex-1">
+    <div className="flex items-center bg-accent">
+      <div className="flex-1 flex py-2 items-center ml-5 ">
         <Link href="/" className="ml-5">
           <Image src="/logo.png" alt="logo" height={100} width={100} />
         </Link>
