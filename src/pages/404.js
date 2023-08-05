@@ -6,7 +6,7 @@ const NotFound = () => {
   const router = useRouter();
   setTimeout(() => {
     router.push("/");
-  }, 5000);
+  }, 1000);
   return (
     <div className="h-screen bg-slate-200 py-20">
       <Head>

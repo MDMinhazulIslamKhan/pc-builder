@@ -3,14 +3,16 @@ import Meta from "@/Components/meta/meta";
 import { addToCart } from "@/redux/features/cartSlice";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const Monitor = ({ allProducts }) => {
+  const router = useRouter();
   const dispatch = useDispatch();
-  // const { monitor } = useSelector((state) => state.cart);
   const addProduct = (product) => {
     dispatch(addToCart({ product: "monitor", details: product }));
+    router.push("/pc-build");
   };
   return (
     <>
@@ -86,7 +88,7 @@ export const getStaticProps = async () => {
     console.error("Error fetching data:", error);
     return {
       props: {
-        allMonitor: [],
+        allProducts: [],
       },
       revalidate: 30,
     };

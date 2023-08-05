@@ -7,6 +7,8 @@ const initialState = {
   powerSupply: [],
   ram: [],
   storage: [],
+  accessories: [],
+  total: 0,
 };
 const cartSlice = createSlice({
   name: "cart",
@@ -17,29 +19,16 @@ const cartSlice = createSlice({
         return;
       }
       state[action.payload.product].push(action.payload.details);
+      state.total += action.payload.details.price;
     },
     removeOne: (state, action) => {
-      const existingProduct = state.products.find(
-        (product) => product._id === action.payload._id
+      state[action.payload.product] = state[action.payload.product].filter(
+        (product) => product._id !== action.payload.details._id
       );
-
-      if (existingProduct && existingProduct.quantity > 1) {
-        existingProduct.quantity -= 1;
-      } else {
-        state.products = state.products.filter(
-          (product) => product._id !== action.payload._id
-        );
-      }
-      state.total -= action.payload.price;
-    },
-    removeFromCart: (state, action) => {
-      state.products = state.products.filter(
-        (product) => product._id !== action.payload._id
-      );
-      state.total -= action.payload.price * action.payload.quantity;
+      state.total -= action.payload.details.price;
     },
   },
 });
 
-export const { addToCart, removeFromCart, removeOne } = cartSlice.actions;
+export const { addToCart, removeOne } = cartSlice.actions;
 export default cartSlice.reducer;
