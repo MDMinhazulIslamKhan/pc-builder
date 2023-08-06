@@ -80,6 +80,16 @@ const Product = ({ product }) => {
               </table>
             </div>
           </div>
+          <div className="font-bold">
+            <span className="text-neutral text-lg font-bold">Reviews</span>
+            <div className="overflow-x-auto my-5">
+              <ul className="list-disc ml-8">
+                {product.reviews.map((review, index) => (
+                  <li key={index}>{review}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
           <div className="card-actions justify-end">
             <button
               className="btn btn-neutral"

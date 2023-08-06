@@ -73,9 +73,6 @@ const Navbar = () => {
                     <Link href="/profile">Profile</Link>
                   </li>
                   <li>
-                    <Link href="/order">Order</Link>
-                  </li>
-                  <li>
                     <p onClick={() => signOut()}>Logout</p>
                   </li>
                 </ul>

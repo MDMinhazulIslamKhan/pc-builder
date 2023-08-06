@@ -588,7 +588,7 @@ const PCBuild = () => {
                 Total Cost
               </th>
               <td className="font-bold text-lg text-neutral pl-10">
-                {allProduct.total}
+                {allProduct.total} taka
               </td>
               <td>
                 <button
