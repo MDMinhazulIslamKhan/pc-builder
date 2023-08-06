@@ -5,16 +5,16 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 
-const Product = ({ product }) => {
+const AccessoriesDetails = ({ product }) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const addProduct = (product) => {
-    dispatch(addToCart({ product: "CPU", details: product }));
+    dispatch(addToCart({ product: "accessories", details: product }));
     router.push("/pc-build");
   };
   return (
     <>
-      <Meta title={"CPU OurPC.com"} />
+      <Meta title={"Accessories OurPC.com"} />
       <div className="card grid md:grid-cols-2 card-side bg-base-100 shadow-xl mt-10">
         <figure>
           <Image
@@ -80,6 +80,16 @@ const Product = ({ product }) => {
               </table>
             </div>
           </div>
+          <div className="font-bold">
+            <span className="text-neutral text-lg font-bold">Reviews</span>
+            <div className="overflow-x-auto my-5">
+              <ul className="list-disc ml-8">
+                {product.reviews.map((review, index) => (
+                  <li key={index}>{review}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
           <div className="card-actions justify-end">
             <button
               className="btn btn-neutral"
@@ -94,14 +104,14 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
-Product.getLayout = function getLayout(page) {
+export default AccessoriesDetails;
+AccessoriesDetails.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
 export const getStaticPaths = async () => {
   const res = await fetch(
-    "https://pc-builder-backend-mdminhazulislamkhan.vercel.app/cpu"
+    "https://pc-builder-backend-mdminhazulislamkhan.vercel.app/accessories"
   );
   const products = await res.json();
   const paths = products.map((product) => ({
@@ -112,7 +122,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `https://pc-builder-backend-mdminhazulislamkhan.vercel.app/cpu/${params.id}`
+    `https://pc-builder-backend-mdminhazulislamkhan.vercel.app/accessories/${params.id}`
   );
   const data = await res.json();
 

@@ -5,11 +5,11 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 
-const Product = ({ product }) => {
+const CPUDetails = ({ product }) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const addProduct = (product) => {
-    dispatch(addToCart({ product: "CPU", details: product }));
+    dispatch(addToCart({ product: "cpu", details: product }));
     router.push("/pc-build");
   };
   return (
@@ -104,8 +104,8 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
-Product.getLayout = function getLayout(page) {
+export default CPUDetails;
+CPUDetails.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 

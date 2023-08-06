@@ -3,10 +3,9 @@ import Meta from "@/Components/meta/meta";
 import { addToCart } from "@/redux/features/cartSlice";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
-const Product = ({ product }) => {
-  const { monitor } = useSelector((state) => state.cart);
+const MonitorDetails = ({ product }) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const addProduct = (product) => {
@@ -81,6 +80,16 @@ const Product = ({ product }) => {
               </table>
             </div>
           </div>
+          <div className="font-bold">
+            <span className="text-neutral text-lg font-bold">Reviews</span>
+            <div className="overflow-x-auto my-5">
+              <ul className="list-disc ml-8">
+                {product.reviews.map((review, index) => (
+                  <li key={index}>{review}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
           <div className="card-actions justify-end">
             <button
               className="btn btn-neutral"
@@ -95,8 +104,8 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
-Product.getLayout = function getLayout(page) {
+export default MonitorDetails;
+MonitorDetails.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 

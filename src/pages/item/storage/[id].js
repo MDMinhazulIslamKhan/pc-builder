@@ -3,19 +3,18 @@ import Meta from "@/Components/meta/meta";
 import { addToCart } from "@/redux/features/cartSlice";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
-const Product = ({ product }) => {
-  const { monitor } = useSelector((state) => state.cart);
+const StorageDetails = ({ product }) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const addProduct = (product) => {
-    dispatch(addToCart({ product: "monitor", details: product }));
+    dispatch(addToCart({ product: "storage", details: product }));
     router.push("/pc-build");
   };
   return (
     <>
-      <Meta title={"Monitor OurPC.com"} />
+      <Meta title={"Storage OurPC.com"} />
       <div className="card grid md:grid-cols-2 card-side bg-base-100 shadow-xl mt-10">
         <figure>
           <Image
@@ -62,23 +61,33 @@ const Product = ({ product }) => {
                   <tr>
                     <th>Brand</th>
                     <th>Model</th>
-                    <th>Specification</th>
-                    <th>Resolution</th>
-                    <th>Port</th>
-                    <th>Voltage</th>
+                    <th>Threads</th>
+                    <th>Bus Speed</th>
+                    <th>CPU Cache</th>
+                    <th>Lithography</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th>{product.keyFeatures.Brand}</th>
                     <td>{product.keyFeatures.Model}</td>
-                    <td>{product.keyFeatures.Specification}</td>
-                    <td>{product.keyFeatures.Resolution}</td>
-                    <td>{product.keyFeatures.Port}</td>
-                    <td>{product.keyFeatures.Voltage}</td>
+                    <td>{product.keyFeatures.Threads}</td>
+                    <td>{product.keyFeatures["Bus Speed"]}</td>
+                    <td>{product.keyFeatures["CPU Cache"]}</td>
+                    <td>{product.keyFeatures.Lithography}</td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+          <div className="font-bold">
+            <span className="text-neutral text-lg font-bold">Reviews</span>
+            <div className="overflow-x-auto my-5">
+              <ul className="list-disc ml-8">
+                {product.reviews.map((review, index) => (
+                  <li key={index}>{review}</li>
+                ))}
+              </ul>
             </div>
           </div>
           <div className="card-actions justify-end">
@@ -95,14 +104,14 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
-Product.getLayout = function getLayout(page) {
+export default StorageDetails;
+StorageDetails.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
 export const getStaticPaths = async () => {
   const res = await fetch(
-    "https://pc-builder-backend-mdminhazulislamkhan.vercel.app/monitor"
+    "https://pc-builder-backend-mdminhazulislamkhan.vercel.app/storage"
   );
   const products = await res.json();
   const paths = products.map((product) => ({
@@ -113,7 +122,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `https://pc-builder-backend-mdminhazulislamkhan.vercel.app/monitor/${params.id}`
+    `https://pc-builder-backend-mdminhazulislamkhan.vercel.app/storage/${params.id}`
   );
   const data = await res.json();
 
