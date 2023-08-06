@@ -11,6 +11,7 @@ const initialState = {
   components: 0,
   cart: [],
   total: 0,
+  cartTotal: 0,
 };
 const cartSlice = createSlice({
   name: "cart",
@@ -45,6 +46,7 @@ const cartSlice = createSlice({
         ...state.storage,
         ...state.accessories
       );
+      state.cartTotal = state.total;
       state.cpu = [];
       state.motherboard = [];
       state.monitor = [];

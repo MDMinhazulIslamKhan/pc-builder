@@ -597,7 +597,7 @@ const PCBuild = () => {
                 <button
                   onClick={addProductIntoCart}
                   className={`${
-                    allProduct.components < 0 && "btn-disabled"
+                    allProduct.components < 3 && "btn-disabled"
                   } btn btn-accent bg-neutral hover:text-neutral text-white btn-sm`}
                 >
                   Complete & Add to Cart

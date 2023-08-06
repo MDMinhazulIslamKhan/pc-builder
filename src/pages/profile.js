@@ -1,4 +1,5 @@
 import RootLayout from "@/Components/Layouts/RootLayout";
+import Meta from "@/Components/meta/meta";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import React from "react";
@@ -7,6 +8,7 @@ const Profile = () => {
   const { data } = useSession();
   return (
     <div className="card w-96 bg-base-100 shadow-xl mx-auto mt-32 text-neutral-content">
+      <Meta title="My Profile OurPC.com" />
       <div className="card-body items-center text-center">
         <div className="avatar">
           <div className="w-24 rounded-full ring ring-primary mb-10 ring-offset-base-100 ring-offset-2">

@@ -1,6 +1,10 @@
+import RootLayout from "@/Components/Layouts/RootLayout";
+import Meta from "@/Components/meta/meta";
+
 const About = () => {
   return (
     <div className="card md:w-1/2 w-3/4 bg-base-100 mx-auto shadow-xl">
+      <Meta />
       <div className="card-body mt-10">
         <h2 className="text-center text-3xl mt-8 font-bold text-neutral">
           Md. Minhazul Islam Khan
@@ -43,3 +47,6 @@ const About = () => {
   );
 };
 export default About;
+About.getLayout = function getLayout(page) {
+  return <RootLayout>{page}</RootLayout>;
+};
