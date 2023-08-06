@@ -43,10 +43,16 @@ const Navbar = () => {
                   <Link href="/item/motherboard">Motherboard</Link>
                 </li>
                 <li>
-                  <Link href="/item/hdd">Hard Disk</Link>
+                  <Link href="/item/hdd">Ram</Link>
+                </li>
+                <li>
+                  <Link href="/item/hdd">Storage</Link>
                 </li>
                 <li>
                   <Link href="/item/power-supply">Power Supply</Link>
+                </li>
+                <li>
+                  <Link href="/item/accessories">Accessories</Link>
                 </li>
               </ul>
             </details>

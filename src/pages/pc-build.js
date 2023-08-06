@@ -1,7 +1,6 @@
 import RootLayout from "@/Components/Layouts/RootLayout";
 import Meta from "@/Components/meta/meta";
 import { removeOne } from "@/redux/features/cartSlice";
-import { SessionProvider } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -9,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const PCBuild = () => {
   const allProduct = useSelector((state) => state.cart);
-  console.log(allProduct.total);
+
   const dispatch = useDispatch();
   const router = useRouter();
   return (
@@ -24,6 +23,11 @@ const PCBuild = () => {
               <th className="font-bold text-neutral text-lg">
                 Selected product
               </th>
+              {allProduct.total != 0 && (
+                <th className="font-bold text-accent text-xl">
+                  Total Cost : {allProduct.total} tk
+                </th>
+              )}
             </tr>
           </thead>
           <tbody>
@@ -574,6 +578,35 @@ const PCBuild = () => {
                       : "Add more"}
                   </button>
                 )}
+              </td>
+            </tr>
+            <tr>
+              <th></th>
+            </tr>
+            <tr>
+              <th className="font-bold text-lg text-neutral pl-10">
+                Total Cost
+              </th>
+              <td className="font-bold text-lg text-neutral pl-10">
+                {allProduct.total}
+              </td>
+              <td>
+                <button
+                  className={`${
+                    allProduct.components < 3 && "btn-disabled"
+                  } btn btn-accent bg-neutral hover:text-neutral text-white btn-sm`}
+                >
+                  Complete & Add to Cart
+                </button>
+                {/* <button
+                  className={`btn btn-accent ${
+                    allProduct.components === 0
+                      ? "text-neutral bg-accent"
+                      : "text-white bg-neutral"
+                  } btn-sm`}
+                >
+                  Complete & Add to Cart
+                </button> */}
               </td>
             </tr>
           </tbody>
