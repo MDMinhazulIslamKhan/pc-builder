@@ -17,9 +17,81 @@ const Home = ({ cpu, monitor, ram, motherboard, storage, accessories }) => {
   return (
     <>
       <Meta title={"OurPC.com"} />
-      <h1 className="text-center font-bold text-4xl my-8">
-        Welcome to pc builder
-      </h1>
+      <div className="sm:w-2/5 w-2/3 mx-auto">
+        <div className="carousel w-full">
+          <div id="slide1" className="carousel-item relative w-full">
+            <Image
+              width={320}
+              height={320}
+              src="https://www.cloud.ryanscomputers.com/cdn/products/medium/biostar-h81mhv3-lga-1150-socket-ddr3-motherboard-11685507407.webp"
+              alt="banner cpu"
+              className="w-full"
+            />
+            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide4" className="btn btn-circle  opacity-60">
+                ❮
+              </a>
+              <a href="#slide2" className="btn btn-circle  opacity-60">
+                ❯
+              </a>
+            </div>
+          </div>
+          <div id="slide2" className="carousel-item relative w-full">
+            <Image
+              width={320}
+              height={320}
+              src="https://www.cloud.ryanscomputers.com/cdn/products/medium/havit-kb380l-rgb-wired-black-gaming-keyboard-11661064845.webp"
+              alt="banner cpu"
+              className="w-full"
+            />
+            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide1" className="btn btn-circle  opacity-60">
+                ❮
+              </a>
+              <a href="#slide3" className="btn btn-circle  opacity-60">
+                ❯
+              </a>
+            </div>
+          </div>
+          <div id="slide3" className="carousel-item relative w-full">
+            <Image
+              width={320}
+              height={320}
+              src="https://www.cloud.ryanscomputers.com/cdn/products/medium/acer-eb192q-185-inch-hd-led-vga-11664195071.webp"
+              alt="banner cpu"
+              className="w-full"
+            />
+            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide2" className="btn btn-circle  opacity-60">
+                ❮
+              </a>
+              <a href="#slide4" className="btn btn-circle  opacity-60">
+                ❯
+              </a>
+            </div>
+          </div>
+          <div id="slide4" className="carousel-item relative w-full">
+            <Image
+              width={320}
+              height={320}
+              src="https://www.cloud.ryanscomputers.com/cdn/products/medium/amd-ryzen-5-4600g-zen-2-11670657768.webp"
+              alt="banner cpu"
+              className="w-full"
+            />
+            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide3" className="btn btn-circle  opacity-60">
+                ❮
+              </a>
+              <a href="#slide1" className="btn btn-circle  opacity-60">
+                ❯
+              </a>
+            </div>
+          </div>
+        </div>
+        <h1 className="text-center text-neutral font-bold text-4xl mb-8">
+          Welcome to OurPc.com
+        </h1>
+      </div>
       <div className="grid grid-cols-1 items-center lg:grid-cols-3 sm:grid-cols-2 gap-12">
         {monitor?.slice(0, 3).map((singleMonitor) => (
           <div
