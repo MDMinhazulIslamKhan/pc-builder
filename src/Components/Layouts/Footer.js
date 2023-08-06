@@ -20,9 +20,6 @@ footer footer-center p-10 text-neutral bg-accent max-h-30 rounded mt-10"
         <Link href="/about" className="link link-hover">
           Contact
         </Link>
-        <Link href="/about" className="link link-hover">
-          Jobs
-        </Link>
       </div>
       <div>
         <div className="grid grid-flow-col gap-4">
@@ -66,8 +63,8 @@ footer footer-center p-10 text-neutral bg-accent max-h-30 rounded mt-10"
       </div>
       <div>
         <p>
-          Copyright © {new Date().getFullYear()} - All right reserved by Book
-          Library.
+          Copyright © {new Date().getFullYear()} - All right reserved by
+          OurPC.com
         </p>
       </div>
     </footer>

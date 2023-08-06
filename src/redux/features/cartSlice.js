@@ -9,6 +9,7 @@ const initialState = {
   storage: [],
   accessories: [],
   components: 0,
+  cart: [],
   total: 0,
 };
 const cartSlice = createSlice({
@@ -34,8 +35,29 @@ const cartSlice = createSlice({
       );
       state.total -= action.payload.details.price;
     },
+    removeAll: (state) => {
+      state.cart.push(
+        ...state.monitor,
+        ...state.cpu,
+        ...state.motherboard,
+        ...state.ram,
+        ...state.powerSupply,
+        ...state.storage,
+        ...state.accessories
+      );
+      state.cpu = [];
+      state.motherboard = [];
+      state.monitor = [];
+      state.ram = [];
+      state.powerSupply = [];
+      state.monitor = [];
+      state.storage = [];
+      state.accessories = [];
+      state.components = 0;
+      state.total = 0;
+    },
   },
 });
 
-export const { addToCart, removeOne } = cartSlice.actions;
+export const { addToCart, removeOne, removeAll } = cartSlice.actions;
 export default cartSlice.reducer;

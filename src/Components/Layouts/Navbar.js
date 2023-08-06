@@ -43,10 +43,10 @@ const Navbar = () => {
                   <Link href="/item/motherboard">Motherboard</Link>
                 </li>
                 <li>
-                  <Link href="/item/hdd">Ram</Link>
+                  <Link href="/item/ram">Ram</Link>
                 </li>
                 <li>
-                  <Link href="/item/hdd">Storage</Link>
+                  <Link href="/item/storage">Storage</Link>
                 </li>
                 <li>
                   <Link href="/item/power-supply">Power Supply</Link>

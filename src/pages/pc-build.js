@@ -1,6 +1,6 @@
 import RootLayout from "@/Components/Layouts/RootLayout";
 import Meta from "@/Components/meta/meta";
-import { removeOne } from "@/redux/features/cartSlice";
+import { removeOne, removeAll } from "@/redux/features/cartSlice";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -8,9 +8,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 const PCBuild = () => {
   const allProduct = useSelector((state) => state.cart);
-
   const dispatch = useDispatch();
   const router = useRouter();
+  const addProductIntoCart = () => {
+    dispatch(removeAll());
+    router.push("/cart");
+  };
   return (
     <>
       <Meta title="PC-Build OurPC.com" />
@@ -592,21 +595,13 @@ const PCBuild = () => {
               </td>
               <td>
                 <button
+                  onClick={addProductIntoCart}
                   className={`${
-                    allProduct.components < 3 && "btn-disabled"
+                    allProduct.components < 0 && "btn-disabled"
                   } btn btn-accent bg-neutral hover:text-neutral text-white btn-sm`}
                 >
                   Complete & Add to Cart
                 </button>
-                {/* <button
-                  className={`btn btn-accent ${
-                    allProduct.components === 0
-                      ? "text-neutral bg-accent"
-                      : "text-white bg-neutral"
-                  } btn-sm`}
-                >
-                  Complete & Add to Cart
-                </button> */}
               </td>
             </tr>
           </tbody>
