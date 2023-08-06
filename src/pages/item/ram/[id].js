@@ -60,21 +60,17 @@ const RamDetails = ({ product }) => {
                 <thead>
                   <tr>
                     <th>Brand</th>
-                    <th>Model</th>
-                    <th>Threads</th>
+                    <th>Capacity</th>
+                    <th>RAM Type</th>
                     <th>Bus Speed</th>
-                    <th>CPU Cache</th>
-                    <th>Lithography</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th>{product.keyFeatures.Brand}</th>
-                    <td>{product.keyFeatures.Model}</td>
-                    <td>{product.keyFeatures.Threads}</td>
+                    <td>{product.keyFeatures.Capacity}</td>
+                    <td>{product.keyFeatures["RAM Type"]}</td>
                     <td>{product.keyFeatures["Bus Speed"]}</td>
-                    <td>{product.keyFeatures["CPU Cache"]}</td>
-                    <td>{product.keyFeatures.Lithography}</td>
                   </tr>
                 </tbody>
               </table>

@@ -58,7 +58,7 @@ const Home = ({ cpu, monitor, ram, motherboard, storage, accessories }) => {
                   Add to Cart
                 </button>
                 <Link
-                  href={`/item/cpu/${singleMonitor._id}`}
+                  href={`/item/${singleMonitor.category}/${singleMonitor._id}`}
                   className="font-semibold hover:text-primary"
                 >
                   See more
@@ -101,7 +101,7 @@ const Home = ({ cpu, monitor, ram, motherboard, storage, accessories }) => {
                   Add to Cart
                 </button>
                 <Link
-                  href={`/item/cpu/${singleCpu._id}`}
+                  href={`/item/${singleCpu.category}/${singleCpu._id}`}
                   className="font-semibold hover:text-primary"
                 >
                   See more
@@ -147,7 +147,7 @@ const Home = ({ cpu, monitor, ram, motherboard, storage, accessories }) => {
                   Add to Cart
                 </button>
                 <Link
-                  href={`/item/cpu/${singleMotherboard._id}`}
+                  href={`/item/${singleMotherboard.category}/${singleMotherboard._id}`}
                   className="font-semibold hover:text-primary"
                 >
                   See more
@@ -193,7 +193,7 @@ const Home = ({ cpu, monitor, ram, motherboard, storage, accessories }) => {
                   Add to Cart
                 </button>
                 <Link
-                  href={`/item/cpu/${singleStorage._id}`}
+                  href={`/item/${singleStorage.category}/${singleStorage._id}`}
                   className="font-semibold hover:text-primary"
                 >
                   See more
@@ -236,7 +236,7 @@ const Home = ({ cpu, monitor, ram, motherboard, storage, accessories }) => {
                   Add to Cart
                 </button>
                 <Link
-                  href={`/item/cpu/${singleRam._id}`}
+                  href={`/item/${singleRam.category}/${singleRam._id}`}
                   className="font-semibold hover:text-primary"
                 >
                   See more
@@ -282,7 +282,7 @@ const Home = ({ cpu, monitor, ram, motherboard, storage, accessories }) => {
                   Add to Cart
                 </button>
                 <Link
-                  href={`/item/cpu/${singleAccessories._id}`}
+                  href={`/item/${singleAccessories.category}/${singleAccessories._id}`}
                   className="font-semibold hover:text-primary"
                 >
                   See more
