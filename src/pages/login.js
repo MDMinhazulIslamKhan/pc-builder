@@ -5,7 +5,7 @@ import React from "react";
 
 const Login = () => {
   return (
-    <div className="card w-96 bg-accent mx-auto my-40 shadow-xl">
+    <div className="card w-fit sm:w-1/3 bg-accent mx-auto my-40 shadow-xl">
       <Head>
         <title>Login OurPC.com</title>
         <link rel="shortcut icon" href="logo.png" type="image/x-icon" />

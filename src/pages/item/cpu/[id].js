@@ -16,7 +16,7 @@ const CPUDetails = ({ product }) => {
     <>
       <Meta title={"CPU OurPC.com"} />
       <div className="card grid md:grid-cols-2 card-side bg-base-100 shadow-xl mt-10">
-        <figure>
+        <figure className="w-full">
           <Image
             src={product.image}
             alt={product.productName}
@@ -59,24 +59,26 @@ const CPUDetails = ({ product }) => {
               <table className="table my-5">
                 <thead>
                   <tr>
-                    <th>Brand</th>
+                    <th className="pl-0">Brand</th>
                     <th className="sm:inline-block hidden">Model</th>
                     <th>Threads</th>
                     <th>Bus Speed</th>
-                    <th>CPU Cache</th>
-                    <th>Lithography</th>
+                    <th className="pr-0">CPU Cache</th>
+                    <th className="sm:inline-block hidden">Lithography</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th>{product.keyFeatures.Brand}</th>
+                    <th className="pl-0">{product.keyFeatures.Brand}</th>
                     <td className="sm:inline-block hidden">
                       {product.keyFeatures.Model}
                     </td>
                     <td>{product.keyFeatures.Threads}</td>
                     <td>{product.keyFeatures["Bus Speed"]}</td>
-                    <td>{product.keyFeatures["CPU Cache"]}</td>
-                    <td>{product.keyFeatures.Lithography}</td>
+                    <td className="pr-0">{product.keyFeatures["CPU Cache"]}</td>
+                    <td className="sm:inline-block hidden">
+                      {product.keyFeatures.Lithography}
+                    </td>
                   </tr>
                 </tbody>
               </table>

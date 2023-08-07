@@ -16,7 +16,7 @@ const RamDetails = ({ product }) => {
     <>
       <Meta title={"Ram OurPC.com"} />
       <div className="card grid md:grid-cols-2 card-side bg-base-100 shadow-xl mt-10">
-        <figure>
+        <figure className="w-full">
           <Image
             src={product.image}
             alt={product.productName}
@@ -59,18 +59,18 @@ const RamDetails = ({ product }) => {
               <table className="table my-5">
                 <thead>
                   <tr>
-                    <th>Brand</th>
+                    <th className="pl-0">Brand</th>
                     <th>Capacity</th>
                     <th>RAM Type</th>
-                    <th>Bus Speed</th>
+                    <th className="pr-0">Bus Speed</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th>{product.keyFeatures.Brand}</th>
+                    <th className="pl-0">{product.keyFeatures.Brand}</th>
                     <td>{product.keyFeatures.Capacity}</td>
                     <td>{product.keyFeatures["RAM Type"]}</td>
-                    <td>{product.keyFeatures["Bus Speed"]}</td>
+                    <td className="pr-0">{product.keyFeatures["Bus Speed"]}</td>
                   </tr>
                 </tbody>
               </table>

@@ -16,7 +16,7 @@ const MonitorDetails = ({ product }) => {
     <>
       <Meta title={"Monitor OurPC.com"} />
       <div className="card grid md:grid-cols-2 card-side bg-base-100 shadow-xl mt-10">
-        <figure>
+        <figure className="w-full">
           <Image
             src={product.image}
             alt={product.productName}
@@ -59,24 +59,26 @@ const MonitorDetails = ({ product }) => {
               <table className="table my-5">
                 <thead>
                   <tr>
-                    <th>Brand</th>
+                    <th className="pl-0">Brand</th>
                     <th>Model</th>
-                    <th>Specification</th>
+                    <th className="sm:inline-block hidden">Specification</th>
                     <th>Resolution</th>
                     <th className="sm:inline-block hidden">Port</th>
-                    <th>Voltage</th>
+                    <th className="pr-0">Voltage</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th>{product.keyFeatures.Brand}</th>
+                    <th className="pl-0">{product.keyFeatures.Brand}</th>
                     <td>{product.keyFeatures.Model}</td>
-                    <td>{product.keyFeatures.Specification}</td>
+                    <td className="sm:inline-block hidden">
+                      {product.keyFeatures.Specification}
+                    </td>
                     <td>{product.keyFeatures.Resolution}</td>
                     <td className="sm:inline-block hidden">
                       {product.keyFeatures.Port}
                     </td>
-                    <td>{product.keyFeatures.Voltage}</td>
+                    <td className="pr-0">{product.keyFeatures.Voltage}</td>
                   </tr>
                 </tbody>
               </table>

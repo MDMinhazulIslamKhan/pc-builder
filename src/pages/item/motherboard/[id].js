@@ -16,7 +16,7 @@ const MotherboardDetails = ({ product }) => {
     <>
       <Meta title={"Motherboard OurPC.com"} />
       <div className="card grid md:grid-cols-2 card-side bg-base-100 shadow-xl mt-10">
-        <figure>
+        <figure className="w-full">
           <Image
             src={product.image}
             alt={product.productName}
@@ -59,18 +59,18 @@ const MotherboardDetails = ({ product }) => {
               <table className="table my-5">
                 <thead>
                   <tr>
-                    <th>Brand</th>
+                    <th className="pl-0">Brand</th>
                     <th>Chipset</th>
                     <th>Memory Type</th>
-                    <th>VGA Ports</th>
+                    <th className="pr-0">VGA Ports</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>{product.keyFeatures.Brand}</td>
+                    <td className="pl-0">{product.keyFeatures.Brand}</td>
                     <td>{product.keyFeatures.Chipset}</td>
                     <td>{product.keyFeatures["Memory Type"]}</td>
-                    <td>{product.keyFeatures["VGA Ports"]}</td>
+                    <td className="pr-0">{product.keyFeatures["VGA Ports"]}</td>
                   </tr>
                 </tbody>
               </table>

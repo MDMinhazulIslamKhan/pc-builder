@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 const Cart = () => {
   const { cart, cartTotal } = useSelector((state) => state.cart);
   return (
-    <div className="overflow-x-auto mx-10 mt-20">
+    <div className="overflow-x-auto sm:mx-10 mx-0 mt-20">
       <Meta title="My Cart : OurPC.com" />
       <table className="table">
         <thead>

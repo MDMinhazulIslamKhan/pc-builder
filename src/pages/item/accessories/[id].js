@@ -16,7 +16,7 @@ const AccessoriesDetails = ({ product }) => {
     <>
       <Meta title={"Accessories OurPC.com"} />
       <div className="card grid md:grid-cols-2 card-side bg-base-100 shadow-xl mt-10">
-        <figure>
+        <figure className="w-full">
           <Image
             src={product.image}
             alt={product.productName}
@@ -59,16 +59,16 @@ const AccessoriesDetails = ({ product }) => {
               <table className="table my-5">
                 <thead>
                   <tr>
-                    <th>Brand</th>
+                    <th className="pl-0">Brand</th>
                     <th>Model</th>
-                    <th>Color</th>
+                    <th className="pr-0">Color</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th>{product.keyFeatures.Brand}</th>
+                    <th className="pl-0">{product.keyFeatures.Brand}</th>
                     <td>{product.keyFeatures.Model}</td>
-                    <td>{product.keyFeatures.Color}</td>
+                    <td className="pr-0">{product.keyFeatures.Color}</td>
                   </tr>
                 </tbody>
               </table>

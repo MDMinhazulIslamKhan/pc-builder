@@ -16,7 +16,7 @@ const PowerSupplyDetails = ({ product }) => {
     <>
       <Meta title={"Power Supply OurPC.com"} />
       <div className="card grid md:grid-cols-2 card-side bg-base-100 shadow-xl mt-10">
-        <figure>
+        <figure className="w-full">
           <Image
             src={product.image}
             alt={product.productName}
@@ -59,18 +59,20 @@ const PowerSupplyDetails = ({ product }) => {
               <table className="table my-5">
                 <thead>
                   <tr>
-                    <th>Brand</th>
+                    <th className="pl-0">Brand</th>
                     <th>Input Voltage</th>
-                    <th>Maximum Power</th>
-                    <th>Body Material</th>
+                    <th>Max Power</th>
+                    <th className="pr-0">Material</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th>{product.keyFeatures.Brand}</th>
+                    <th className="pl-0">{product.keyFeatures.Brand}</th>
                     <td>{product.keyFeatures["Input Voltage"]}</td>
                     <td>{product.keyFeatures["Maximum Power"]}</td>
-                    <td>{product.keyFeatures["Body Material"]}</td>
+                    <td className="pr-0">
+                      {product.keyFeatures["Body Material"]}
+                    </td>
                   </tr>
                 </tbody>
               </table>

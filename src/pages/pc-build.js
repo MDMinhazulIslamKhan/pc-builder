@@ -36,33 +36,26 @@ const PCBuild = () => {
         <table className="table">
           <thead>
             <tr>
-              <th className="font-bold text-neutral text-lg">Components</th>
-              <th className="font-bold text-neutral text-lg">
-                Selected product
+              <th className="font-bold text-neutral text-center text-lg">
+                Components
               </th>
-              {allProduct.total != 0 && (
-                <th className="font-bold text-accent text-xl">
-                  Total Cost : {allProduct.total} tk
-                </th>
-              )}
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th className="font-semibold text-neutral pl-10">Monitor</th>
-              <td>
-                {allProduct.monitor.length == 0 ? (
-                  <p className="text-red-400 font-bold ml-4">Not selected</p>
-                ) : (
-                  allProduct.monitor.map((singleProduct, index) => (
+              {allProduct.monitor.length == 0 ? (
+                <th className="font-semibold text-neutral pl-10">Monitor</th>
+              ) : (
+                <td>
+                  {allProduct.monitor.map((singleProduct, index) => (
                     <div key={index} className="overflow-x-auto">
                       <table className="table">
                         <tbody>
                           <tr>
                             <td>
-                              <div className="flex items-center space-x-3">
+                              <div className="flex justify-evenly items-center">
                                 <div className="avatar">
-                                  <div className="mask w-12 h-12">
+                                  <div className="mask w-20 mr-5">
                                     <Image
                                       src={singleProduct.image}
                                       alt={singleProduct.productName}
@@ -81,10 +74,16 @@ const PCBuild = () => {
                                     </span>{" "}
                                     : {singleProduct.price}
                                   </div>
+                                  <div className="text-sm opacity-100 w-fit">
+                                    <span className="text-neutral font-semibold">
+                                      Category
+                                    </span>{" "}
+                                    : {singleProduct.category}
+                                  </div>
                                 </div>
                               </div>
                             </td>
-                            <td className="grid justify-items-end">
+                            <td className="grid justify-items-end sm:mt-0 mt-5">
                               <Link
                                 href={`/item/${singleProduct.category}/${singleProduct._id}`}
                                 className="btn btn-outline btn-primary btn-xs mb-3"
@@ -109,9 +108,9 @@ const PCBuild = () => {
                         </tbody>
                       </table>
                     </div>
-                  ))
-                )}
-              </td>
+                  ))}
+                </td>
+              )}
               <td>
                 {allProduct.monitor.length >= 1 ? (
                   ""
@@ -126,22 +125,21 @@ const PCBuild = () => {
               </td>
             </tr>
             <tr>
-              <th className="font-semibold text-neutral pl-10">
-                CPU / Processor
-              </th>
-              <td>
-                {allProduct.cpu.length == 0 ? (
-                  <p className="text-red-400 font-bold ml-4">Not selected</p>
-                ) : (
-                  allProduct.cpu.map((singleProduct, index) => (
+              {allProduct.cpu.length == 0 ? (
+                <th className="font-semibold text-neutral pl-10">
+                  CPU / Processor
+                </th>
+              ) : (
+                <td>
+                  {allProduct.cpu.map((singleProduct, index) => (
                     <div key={index} className="overflow-x-auto">
                       <table className="table">
                         <tbody>
                           <tr>
                             <td>
-                              <div className="flex items-center space-x-3">
+                              <div className="flex justify-evenly items-center">
                                 <div className="avatar">
-                                  <div className="mask w-12 h-12">
+                                  <div className="mask w-20 mr-5">
                                     <Image
                                       src={singleProduct.image}
                                       alt={singleProduct.productName}
@@ -160,10 +158,16 @@ const PCBuild = () => {
                                     </span>{" "}
                                     : {singleProduct.price}
                                   </div>
+                                  <div className="text-sm opacity-100 w-fit">
+                                    <span className="text-neutral font-semibold">
+                                      Category
+                                    </span>{" "}
+                                    : {singleProduct.category}
+                                  </div>
                                 </div>
                               </div>
                             </td>
-                            <td className="grid justify-items-end">
+                            <td className="grid justify-items-end sm:mt-0 mt-5">
                               <Link
                                 href={`/item/${singleProduct.category}/${singleProduct._id}`}
                                 className="btn btn-outline btn-primary btn-xs mb-3"
@@ -188,9 +192,9 @@ const PCBuild = () => {
                         </tbody>
                       </table>
                     </div>
-                  ))
-                )}
-              </td>
+                  ))}
+                </td>
+              )}
               <td>
                 {allProduct.cpu.length >= 1 ? (
                   ""
@@ -205,20 +209,21 @@ const PCBuild = () => {
               </td>
             </tr>
             <tr>
-              <th className="font-semibold text-neutral pl-10">Motherboard</th>
-              <td>
-                {allProduct.motherboard.length == 0 ? (
-                  <p className="text-red-400 font-bold ml-4">Not selected</p>
-                ) : (
-                  allProduct.motherboard.map((singleProduct, index) => (
+              {allProduct.motherboard.length == 0 ? (
+                <th className="font-semibold text-neutral pl-10">
+                  Motherboard
+                </th>
+              ) : (
+                <td>
+                  {allProduct.motherboard.map((singleProduct, index) => (
                     <div key={index} className="overflow-x-auto">
                       <table className="table">
                         <tbody>
                           <tr>
                             <td>
-                              <div className="flex items-center space-x-3">
+                              <div className="flex justify-evenly items-center">
                                 <div className="avatar">
-                                  <div className="mask w-12 h-12">
+                                  <div className="mask w-20 mr-5">
                                     <Image
                                       src={singleProduct.image}
                                       alt={singleProduct.productName}
@@ -237,10 +242,16 @@ const PCBuild = () => {
                                     </span>{" "}
                                     : {singleProduct.price}
                                   </div>
+                                  <div className="text-sm opacity-100 w-fit">
+                                    <span className="text-neutral font-semibold">
+                                      Category
+                                    </span>{" "}
+                                    : {singleProduct.category}
+                                  </div>
                                 </div>
                               </div>
                             </td>
-                            <td className="grid justify-items-end">
+                            <td className="grid justify-items-end sm:mt-0 mt-5">
                               <Link
                                 href={`/item/${singleProduct.category}/${singleProduct._id}`}
                                 className="btn btn-outline btn-primary btn-xs mb-3"
@@ -265,9 +276,9 @@ const PCBuild = () => {
                         </tbody>
                       </table>
                     </div>
-                  ))
-                )}
-              </td>
+                  ))}
+                </td>
+              )}
               <td>
                 {allProduct.motherboard.length >= 1 ? (
                   ""
@@ -282,20 +293,19 @@ const PCBuild = () => {
               </td>
             </tr>
             <tr>
-              <th className="font-semibold text-neutral pl-10">RAM</th>
-              <td>
-                {allProduct.ram.length == 0 ? (
-                  <p className="text-red-400 font-bold ml-4">Not selected</p>
-                ) : (
-                  allProduct.ram.map((singleProduct, index) => (
+              {allProduct.ram.length == 0 ? (
+                <th className="font-semibold text-neutral pl-10">RAM</th>
+              ) : (
+                <td>
+                  {allProduct.ram.map((singleProduct, index) => (
                     <div key={index} className="overflow-x-auto">
                       <table className="table">
                         <tbody>
                           <tr>
                             <td>
-                              <div className="flex items-center space-x-3">
+                              <div className="flex justify-evenly items-center">
                                 <div className="avatar">
-                                  <div className="mask w-12 h-12">
+                                  <div className="mask w-20 mr-5">
                                     <Image
                                       src={singleProduct.image}
                                       alt={singleProduct.productName}
@@ -314,10 +324,16 @@ const PCBuild = () => {
                                     </span>{" "}
                                     : {singleProduct.price}
                                   </div>
+                                  <div className="text-sm opacity-100 w-fit">
+                                    <span className="text-neutral font-semibold">
+                                      Category
+                                    </span>{" "}
+                                    : {singleProduct.category}
+                                  </div>
                                 </div>
                               </div>
                             </td>
-                            <td className="grid justify-items-end">
+                            <td className="grid justify-items-end sm:mt-0 mt-5">
                               <Link
                                 href={`/item/${singleProduct.category}/${singleProduct._id}`}
                                 className="btn btn-outline btn-primary btn-xs mb-3"
@@ -342,9 +358,9 @@ const PCBuild = () => {
                         </tbody>
                       </table>
                     </div>
-                  ))
-                )}
-              </td>
+                  ))}
+                </td>
+              )}
               <td>
                 {allProduct.ram.length == 3 ? (
                   ""
@@ -359,22 +375,21 @@ const PCBuild = () => {
               </td>
             </tr>
             <tr>
-              <th className="font-semibold text-neutral pl-10">
-                Power Supply Unit
-              </th>
-              <td>
-                {allProduct.powerSupply.length == 0 ? (
-                  <p className="text-red-400 font-bold ml-4">Not selected</p>
-                ) : (
-                  allProduct.powerSupply.map((singleProduct, index) => (
+              {allProduct.powerSupply.length == 0 ? (
+                <th className="font-semibold text-neutral pl-10">
+                  Power Supply Unit
+                </th>
+              ) : (
+                <td>
+                  {allProduct.powerSupply.map((singleProduct, index) => (
                     <div key={index} className="overflow-x-auto">
                       <table className="table">
                         <tbody>
                           <tr>
                             <td>
-                              <div className="flex items-center space-x-3">
+                              <div className="flex justify-evenly items-center">
                                 <div className="avatar">
-                                  <div className="mask w-12 h-12">
+                                  <div className="mask w-20 mr-5">
                                     <Image
                                       src={singleProduct.image}
                                       alt={singleProduct.productName}
@@ -393,12 +408,18 @@ const PCBuild = () => {
                                     </span>{" "}
                                     : {singleProduct.price}
                                   </div>
+                                  <div className="text-sm opacity-100 w-fit">
+                                    <span className="text-neutral font-semibold">
+                                      Category
+                                    </span>{" "}
+                                    : {singleProduct.category}
+                                  </div>
                                 </div>
                               </div>
                             </td>
-                            <td className="grid justify-items-end">
+                            <td className="grid justify-items-end sm:mt-0 mt-5">
                               <Link
-                                href={`/item/${singleProduct.category}/${singleProduct._id}`}
+                                href={`/item/power-supply/${singleProduct._id}`}
                                 className="btn btn-outline btn-primary btn-xs mb-3"
                               >
                                 details
@@ -421,9 +442,9 @@ const PCBuild = () => {
                         </tbody>
                       </table>
                     </div>
-                  ))
-                )}
-              </td>
+                  ))}
+                </td>
+              )}
               <td>
                 {allProduct.powerSupply.length >= 1 ? (
                   ""
@@ -432,28 +453,27 @@ const PCBuild = () => {
                     onClick={() => router.push("/item/power-supply")}
                     className="btn btn-accent bg-neutral hover:text-neutral text-white btn-sm"
                   >
-                    Add PowerSupply
+                    Add powerSupply
                   </button>
                 )}
               </td>
             </tr>
             <tr>
-              <th className="font-semibold text-neutral pl-10">
-                Storage Device
-              </th>
-              <td>
-                {allProduct.storage.length == 0 ? (
-                  <p className="text-red-400 font-bold ml-4">Not selected</p>
-                ) : (
-                  allProduct.storage.map((singleProduct, index) => (
+              {allProduct.storage.length == 0 ? (
+                <th className="font-semibold text-neutral pl-10">
+                  Storage Device
+                </th>
+              ) : (
+                <td>
+                  {allProduct.storage.map((singleProduct, index) => (
                     <div key={index} className="overflow-x-auto">
                       <table className="table">
                         <tbody>
                           <tr>
                             <td>
-                              <div className="flex items-center space-x-3">
+                              <div className="flex justify-evenly items-center">
                                 <div className="avatar">
-                                  <div className="mask w-12 h-12">
+                                  <div className="mask w-20 mr-5">
                                     <Image
                                       src={singleProduct.image}
                                       alt={singleProduct.productName}
@@ -472,10 +492,16 @@ const PCBuild = () => {
                                     </span>{" "}
                                     : {singleProduct.price}
                                   </div>
+                                  <div className="text-sm opacity-100 w-fit">
+                                    <span className="text-neutral font-semibold">
+                                      Category
+                                    </span>{" "}
+                                    : {singleProduct.category}
+                                  </div>
                                 </div>
                               </div>
                             </td>
-                            <td className="grid justify-items-end">
+                            <td className="grid justify-items-end sm:mt-0 mt-5">
                               <Link
                                 href={`/item/${singleProduct.category}/${singleProduct._id}`}
                                 className="btn btn-outline btn-primary btn-xs mb-3"
@@ -500,9 +526,9 @@ const PCBuild = () => {
                         </tbody>
                       </table>
                     </div>
-                  ))
-                )}
-              </td>
+                  ))}
+                </td>
+              )}
               <td>
                 {allProduct.storage.length == 3 ? (
                   ""
@@ -519,20 +545,21 @@ const PCBuild = () => {
               </td>
             </tr>
             <tr>
-              <th className="font-semibold text-neutral pl-10">Accessories</th>
-              <td>
-                {allProduct.accessories.length == 0 ? (
-                  <p className="text-red-400 font-bold ml-4">Not selected</p>
-                ) : (
-                  allProduct.accessories.map((singleProduct, index) => (
+              {allProduct.accessories.length == 0 ? (
+                <th className="font-semibold text-neutral pl-10">
+                  Accessories
+                </th>
+              ) : (
+                <td>
+                  {allProduct.accessories.map((singleProduct, index) => (
                     <div key={index} className="overflow-x-auto">
                       <table className="table">
                         <tbody>
                           <tr>
                             <td>
-                              <div className="flex items-center space-x-3">
+                              <div className="flex justify-evenly items-center">
                                 <div className="avatar">
-                                  <div className="mask w-12 h-12">
+                                  <div className="mask w-20 mr-5">
                                     <Image
                                       src={singleProduct.image}
                                       alt={singleProduct.productName}
@@ -551,10 +578,16 @@ const PCBuild = () => {
                                     </span>{" "}
                                     : {singleProduct.price}
                                   </div>
+                                  <div className="text-sm opacity-100 w-fit">
+                                    <span className="text-neutral font-semibold">
+                                      Category
+                                    </span>{" "}
+                                    : {singleProduct.category}
+                                  </div>
                                 </div>
                               </div>
                             </td>
-                            <td className="grid justify-items-end">
+                            <td className="grid justify-items-end sm:mt-0 mt-5">
                               <Link
                                 href={`/item/${singleProduct.category}/${singleProduct._id}`}
                                 className="btn btn-outline btn-primary btn-xs mb-3"
@@ -579,9 +612,9 @@ const PCBuild = () => {
                         </tbody>
                       </table>
                     </div>
-                  ))
-                )}
-              </td>
+                  ))}
+                </td>
+              )}
               <td>
                 {allProduct.accessories.length == 3 ? (
                   ""
@@ -597,29 +630,19 @@ const PCBuild = () => {
                 )}
               </td>
             </tr>
-            <tr>
-              <th></th>
-            </tr>
-            <tr>
-              <th className="font-bold text-lg text-neutral pl-10">
-                Total Cost
-              </th>
-              <td className="font-bold text-lg text-neutral pl-10">
-                {allProduct.total} taka
-              </td>
-              <td>
-                <button
-                  onClick={addProductIntoCart}
-                  className={`${
-                    allProduct.components < 3 && "btn-disabled"
-                  } btn btn-accent bg-neutral hover:text-neutral text-white btn-sm`}
-                >
-                  Complete & Add to Cart
-                </button>
-              </td>
-            </tr>
           </tbody>
         </table>
+      </div>
+      <div className="font-bold text-2xl text-neutral mt-20 mb-5 text-center pl-10">
+        Total : {allProduct.total} taka
+        <button
+          onClick={addProductIntoCart}
+          className={`${
+            allProduct.components < 3 && "btn-disabled"
+          } btn btn-accent bg-neutral hover:text-neutral block mt-10 text-white btn-sm mx-auto`}
+        >
+          Complete & Add to Cart
+        </button>
       </div>
     </>
   );

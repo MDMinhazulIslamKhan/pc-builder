@@ -18,7 +18,7 @@ const Navbar = () => {
       </div>
 
       <div className="flex-col-reverse">
-        <ul className="menu menu-horizontal mr-2">
+        <ul className="menu menu-horizontal mr-2 hidden sm:block">
           <li>
             <summary className="bg-neutral text-white">
               <Link href="/pc-build">PC Builder</Link>
@@ -28,11 +28,16 @@ const Navbar = () => {
       </div>
 
       <div className="flex-col-reverse">
-        <ul className="menu menu-horizontal mr-2 hidden sm:block">
+        <ul className="menu menu-horizontal sm:mr-2">
           <li>
             <details>
-              <summary className="bg-neutral text-white">Our Product</summary>
+              <summary className="bg-neutral sm:pl-4 pl-2 text-white">
+                Our Product
+              </summary>
               <ul className="p-2 bg-neutral border-primary text-white border-2 z-10">
+                <li className="sm:hidden">
+                  <Link href="/pc-build">PC Builder</Link>
+                </li>
                 <li>
                   <Link href="/item/monitor">Monitor</Link>
                 </li>
@@ -64,7 +69,9 @@ const Navbar = () => {
           <ul className="menu menu-horizontal mr-2">
             <li>
               <details>
-                <summary className="bg-neutral text-white">Your info</summary>
+                <summary className="bg-neutral sm:pl-4 pl-2 text-white">
+                  Your info
+                </summary>
                 <ul className="p-2 bg-neutral border-primary text-white border-2 z-10">
                   <li>
                     <Link href="/cart">Cart</Link>
