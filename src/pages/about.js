@@ -4,7 +4,7 @@ import Meta from "@/Components/meta/meta";
 const About = () => {
   return (
     <div className="card md:w-1/2 w-3/4 bg-base-100 mx-auto shadow-xl">
-      <Meta />
+      <Meta title="About Us - OurPC.com" />
       <div className="card-body mt-10">
         <h2 className="text-center text-3xl mt-8 font-bold text-neutral">
           Md. Minhazul Islam Khan
@@ -40,6 +40,12 @@ const About = () => {
               <li>React.Js</li>
               <li>Next.Js</li>
             </ul>
+          </div>
+          <div className="text-neutral font-bold">Github:</div>
+          <div className="text-neutral font-bold hover:text-accent">
+            <a href="https://github.com/MDMinhazulIslamKhan" target="_blank">
+              https://github.com/MDMinhazulIslamKhan
+            </a>
           </div>
         </div>
       </div>

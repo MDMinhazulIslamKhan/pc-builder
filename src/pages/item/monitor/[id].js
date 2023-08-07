@@ -63,7 +63,7 @@ const MonitorDetails = ({ product }) => {
                     <th>Model</th>
                     <th>Specification</th>
                     <th>Resolution</th>
-                    <th>Port</th>
+                    <th className="sm:inline-block hidden">Port</th>
                     <th>Voltage</th>
                   </tr>
                 </thead>
@@ -73,7 +73,9 @@ const MonitorDetails = ({ product }) => {
                     <td>{product.keyFeatures.Model}</td>
                     <td>{product.keyFeatures.Specification}</td>
                     <td>{product.keyFeatures.Resolution}</td>
-                    <td>{product.keyFeatures.Port}</td>
+                    <td className="sm:inline-block hidden">
+                      {product.keyFeatures.Port}
+                    </td>
                     <td>{product.keyFeatures.Voltage}</td>
                   </tr>
                 </tbody>

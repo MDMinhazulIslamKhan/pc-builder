@@ -60,7 +60,7 @@ const CPUDetails = ({ product }) => {
                 <thead>
                   <tr>
                     <th>Brand</th>
-                    <th>Model</th>
+                    <th className="sm:inline-block hidden">Model</th>
                     <th>Threads</th>
                     <th>Bus Speed</th>
                     <th>CPU Cache</th>
@@ -70,7 +70,9 @@ const CPUDetails = ({ product }) => {
                 <tbody>
                   <tr>
                     <th>{product.keyFeatures.Brand}</th>
-                    <td>{product.keyFeatures.Model}</td>
+                    <td className="sm:inline-block hidden">
+                      {product.keyFeatures.Model}
+                    </td>
                     <td>{product.keyFeatures.Threads}</td>
                     <td>{product.keyFeatures["Bus Speed"]}</td>
                     <td>{product.keyFeatures["CPU Cache"]}</td>
