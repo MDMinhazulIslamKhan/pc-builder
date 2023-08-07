@@ -60,21 +60,17 @@ const StorageDetails = ({ product }) => {
                 <thead>
                   <tr>
                     <th>Brand</th>
-                    <th>Model</th>
-                    <th>Threads</th>
-                    <th>Bus Speed</th>
-                    <th>CPU Cache</th>
-                    <th>Lithography</th>
+                    <th>Type</th>
+                    <th>Storage</th>
+                    <th>Interface</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th>{product.keyFeatures.Brand}</th>
-                    <td>{product.keyFeatures.Model}</td>
-                    <td>{product.keyFeatures.Threads}</td>
-                    <td>{product.keyFeatures["Bus Speed"]}</td>
-                    <td>{product.keyFeatures["CPU Cache"]}</td>
-                    <td>{product.keyFeatures.Lithography}</td>
+                    <td>{product.keyFeatures.Type}</td>
+                    <td>{product.keyFeatures.Storage}</td>
+                    <td>{product.keyFeatures.Interface}</td>
                   </tr>
                 </tbody>
               </table>

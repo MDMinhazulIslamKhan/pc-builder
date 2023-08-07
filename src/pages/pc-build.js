@@ -19,6 +19,20 @@ const PCBuild = () => {
       <Meta title="PC-Build OurPC.com" />
 
       <div className="overflow-x-auto my-20 sm:mx-20">
+        {allProduct.cart.length ? (
+          <h1 className="text-neutral font-bold text-center text-2xl mb-10">
+            Your Pc is ready, Go to your{" "}
+            <Link
+              href="/cart"
+              className="btn btn-outline btn-secondary font-bold btn-sm"
+            >
+              Cart
+            </Link>
+          </h1>
+        ) : (
+          ""
+        )}
+
         <table className="table">
           <thead>
             <tr>

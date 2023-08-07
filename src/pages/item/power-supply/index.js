@@ -77,7 +77,7 @@ PowerSupply.getLayout = function getLayout(page) {
 export const getStaticProps = async () => {
   try {
     const res = await fetch(
-      "https://pc-builder-backend-mdminhazulislamkhan.vercel.app/power-supply"
+      "https://pc-builder-backend-mdminhazulislamkhan.vercel.app/powersupply"
     );
     const data = await res.json();
 

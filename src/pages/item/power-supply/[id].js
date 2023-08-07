@@ -60,21 +60,17 @@ const PowerSupplyDetails = ({ product }) => {
                 <thead>
                   <tr>
                     <th>Brand</th>
-                    <th>Model</th>
-                    <th>Threads</th>
-                    <th>Bus Speed</th>
-                    <th>CPU Cache</th>
-                    <th>Lithography</th>
+                    <th>Input Voltage</th>
+                    <th>Maximum Power</th>
+                    <th>Body Material</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th>{product.keyFeatures.Brand}</th>
-                    <td>{product.keyFeatures.Model}</td>
-                    <td>{product.keyFeatures.Threads}</td>
-                    <td>{product.keyFeatures["Bus Speed"]}</td>
-                    <td>{product.keyFeatures["CPU Cache"]}</td>
-                    <td>{product.keyFeatures.Lithography}</td>
+                    <td>{product.keyFeatures["Input Voltage"]}</td>
+                    <td>{product.keyFeatures["Maximum Power"]}</td>
+                    <td>{product.keyFeatures["Body Material"]}</td>
                   </tr>
                 </tbody>
               </table>
@@ -111,7 +107,7 @@ PowerSupplyDetails.getLayout = function getLayout(page) {
 
 export const getStaticPaths = async () => {
   const res = await fetch(
-    "https://pc-builder-backend-mdminhazulislamkhan.vercel.app/powerSupply"
+    "https://pc-builder-backend-mdminhazulislamkhan.vercel.app/powersupply"
   );
   const products = await res.json();
   const paths = products.map((product) => ({
@@ -122,7 +118,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `https://pc-builder-backend-mdminhazulislamkhan.vercel.app/powerSupply/${params.id}`
+    `https://pc-builder-backend-mdminhazulislamkhan.vercel.app/powersupply/${params.id}`
   );
   const data = await res.json();
 
