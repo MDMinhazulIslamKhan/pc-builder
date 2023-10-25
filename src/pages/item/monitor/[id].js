@@ -26,7 +26,7 @@ const MonitorDetails = ({ product }) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title font-bold text-center mx-auto mt-8 mb-4 text-neutral text-3xl">
+          <h2 className="card-title font-bold text-center flex-col mx-auto mt-8 mb-4 text-neutral text-3xl">
             {product.productName}
           </h2>
           <div className="text-md my-0">

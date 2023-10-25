@@ -633,7 +633,10 @@ const PCBuild = () => {
           </tbody>
         </table>
       </div>
-      <div className="font-bold text-2xl text-neutral mt-20 mb-5 text-center pl-10">
+      <div
+        title="Add at least 3 components"
+        className="font-bold text-2xl text-neutral mt-20 mb-5 text-center pl-10"
+      >
         Total : {allProduct.total} taka
         <button
           onClick={addProductIntoCart}
@@ -641,7 +644,7 @@ const PCBuild = () => {
             allProduct.components < 3 && "btn-disabled"
           } btn btn-accent bg-neutral hover:text-neutral block mt-10 text-white btn-sm mx-auto`}
         >
-          Complete & Add to Cart
+          Complete & Make your pc.
         </button>
       </div>
     </>
